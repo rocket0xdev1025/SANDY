@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circle Pay Dog | $SANDY on Arc</title>
+  <meta name="description" content="Circle Pay Dog brings payment power, meme energy, and unstoppable dog vibes together for a moonbound crypto adventure." />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <meta property="og:title" content="Circle Pay Dog | $SANDY" />
+  <meta property="og:description" content="Payment power, meme energy, and unstoppable dog vibes on Arc." />
+  <meta property="og:image" content="banner.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            arc: {
+              black: "#07090F",
+              navy: "#0B1428",
+              blue: "#2775CA",
+              glow: "#6EC1FF",
+              cream: "#F6F1E8",
+              sand: "#E8C15A",
+              sunset: "#F07A4A",
+              collar: "#2F6FAE"
+            }
+          },
+          fontFamily: {
+            display: ["Syne", "sans-serif"],
+            body: ["Outfit", "sans-serif"],
+            ticker: ["Bungee", "cursive"]
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(39,117,202,0.35)",
+            sand: "0 0 36px rgba(232,193,90,0.28)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --ca: "TBA";
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Outfit, sans-serif;
+      background-color: #07090F;
+      color: #F6F1E8;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(180deg, rgba(7,9,15,0.35) 0%, rgba(7,9,15,0.55) 100%),
+        url("arc-bg.jpg") center / cover no-repeat fixed;
+    }
+
+    .noise::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      opacity: 0.09;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .paws {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%232775CA' fill-opacity='0.07'%3E%3Cellipse cx='70' cy='86' rx='16' ry='13'/%3E%3Ccircle cx='48' cy='62' r='8'/%3E%3Ccircle cx='64' cy='50' r='8'/%3E%3Ccircle cx='84' cy='50' r='8'/%3E%3Ccircle cx='98' cy='62' r='8'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(11,20,40,0.72), rgba(7,9,15,0.62));
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(110,193,255,0.18);
+    }
+
+    .hero-wash {
+      background:
+        linear-gradient(90deg, rgba(7,9,15,0.88) 0%, rgba(7,9,15,0.55) 42%, rgba(7,9,15,0.28) 100%),
+        linear-gradient(180deg, rgba(7,9,15,0.35) 0%, rgba(7,9,15,0.15) 40%, rgba(7,9,15,0.82) 100%);
+    }
+
+    .collar-ring {
+      animation: spin 22s linear infinite;
+    }
+
+    .floaty {
+      animation: floaty 5.5s ease-in-out infinite;
+    }
+
+    .pulse-glow {
+      animation: pulseGlow 3.2s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(232,193,90,0.35), 0 0 40px rgba(39,117,202,0.25); }
+      50% { box-shadow: 0 0 0 12px rgba(232,193,90,0), 0 0 70px rgba(110,193,255,0.45); }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .road-line {
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgba(232,193,90,0.0) 0 8px,
+        rgba(232,193,90,0.55) 8px 22px,
+        rgba(232,193,90,0.0) 22px 34px
+      );
+    }
+
+    #dexscreener-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 125%;
+    }
+
+    @media (min-width: 1024px) {
+      #dexscreener-embed { padding-bottom: 68%; }
+    }
+
+    #dexscreener-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #07090F; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(#2775CA, #E8C15A);
+      border-radius: 99px;
+    }
+
+    .toast {
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all 0.35s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden">
+  <div class="pointer-events-none fixed inset-0 z-0 paws"></div>
+
+  <header class="fixed top-0 inset-x-0 z-50">
+    <nav class="mx-auto mt-3 flex max-w-7xl items-center justify-between gap-4 rounded-full px-3 py-2 glass shadow-glow sm:px-5">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <img src="logo.png" alt="Circle Pay Dog logo" class="h-11 w-11 rounded-full object-cover ring-2 ring-arc-sand/80" />
+        <span class="truncate">
+          <span class="block font-display text-sm leading-none tracking-wide sm:text-base">Circle Pay Dog</span>
+          <span class="font-ticker text-[11px] text-arc-sand">$SANDY</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-sm font-medium text-arc-cream/80 lg:flex">
+        <a class="hover:text-arc-sand transition" href="#about">About</a>
+        <a class="hover:text-arc-sand transition" href="#howtobuy">How to Buy</a>
+        <a class="hover:text-arc-sand transition" href="#chart">Chart</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button type="button" data-copy-ca class="hidden sm:inline-flex items-center gap-2 rounded-full border border-arc-glow/30 bg-black/30 px-3 py-2 text-xs font-semibold tracking-wide hover:border-arc-sand hover:text-arc-sand transition">
+          <span class="text-arc-cream/50">CA</span>
+          <span class="font-mono" data-ca-label>TBA</span>
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+        <a href="https://gmgn.ai/arc/token/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-arc-sand px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-arc-black hover:bg-white transition">Buy Now</a>
+        <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex rounded-full border border-arc-blue bg-arc-blue/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white hover:bg-arc-blue transition">Chart</a>
+        <a href="https://x.com/CirclePayDog" target="_blank" rel="noopener noreferrer" class="grid h-10 w-10 place-items-center rounded-full bg-black ring-1 ring-white/20 hover:ring-arc-sand transition" aria-label="Circle Pay Dog on X">
+          <img src="x.png" alt="X" class="h-5 w-5 object-contain" />
+        </a>
+        <button id="menuBtn" class="grid h-10 w-10 place-items-center rounded-full border border-white/15 lg:hidden" aria-label="Open menu">
+          <span class="block h-0.5 w-5 bg-white mb-1"></span>
+          <span class="block h-0.5 w-5 bg-white"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden mx-auto mt-2 max-w-7xl rounded-3xl glass px-5 py-4 lg:hidden">
+      <div class="flex flex-col gap-3 text-sm font-semibold">
+        <a href="#about">About</a>
+        <a href="#howtobuy">How to Buy</a>
+        <a href="#chart">Chart</a>
+        <button type="button" data-copy-ca class="text-left">Copy CA: <span data-ca-label>TBA</span></button>
+        <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer">Open Chart</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative min-h-screen noise">
+      <img src="banner.jpg" alt="SANDY riding shotgun toward a desert sunset" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="hero-wash absolute inset-0"></div>
+
+      <div class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-5 pb-24 pt-32 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+        <div>
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-arc-glow/30 bg-black/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-arc-glow">
+            <span class="h-2 w-2 rounded-full bg-arc-sand pulse-glow"></span>
+            Live on Arc • Gas in USDC
+          </div>
+          <p class="font-ticker text-arc-sand text-sm sm:text-base">$SANDY</p>
+          <h1 class="font-display text-5xl leading-[0.9] sm:text-7xl lg:text-8xl">
+            Circle<br />Pay Dog
+          </h1>
+          <p class="mt-6 max-w-xl text-base leading-relaxed text-arc-cream/85 sm:text-lg">
+            Circle Pay Dog brings payment power, meme energy, and unstoppable dog vibes together for a moonbound crypto adventure.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://gmgn.ai/arc/token/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-arc-sand px-7 py-3.5 text-sm font-extrabold uppercase tracking-widest text-arc-black shadow-sand hover:scale-[1.03] transition">Buy Now</a>
+            <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border border-arc-glow/40 bg-arc-blue/25 px-7 py-3.5 text-sm font-extrabold uppercase tracking-widest hover:bg-arc-blue transition">Chart</a>
+            <button type="button" data-copy-ca class="rounded-full border border-white/20 bg-black/30 px-6 py-3.5 text-sm font-bold uppercase tracking-widest hover:border-arc-sand hover:text-arc-sand transition">
+              Copy CA
+            </button>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-6 text-xs uppercase tracking-[0.2em] text-arc-cream/60">
+            <span>Symbol <b class="ml-1 text-arc-cream">SANDY</b></span>
+            <span>Chain <b class="ml-1 text-arc-glow">Arc</b></span>
+            <span>Quote <b class="ml-1 text-arc-sand">USDC</b></span>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-md">
+          <div class="floaty relative mx-auto grid place-items-center">
+            <svg class="collar-ring absolute h-[118%] w-[118%] text-arc-sand/70" viewBox="0 0 200 200" fill="none">
+              <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="3" stroke-dasharray="12 14" />
+              <circle cx="100" cy="100" r="90" stroke="#6EC1FF" stroke-width="1" stroke-dasharray="2 18" />
+            </svg>
+            <img src="logo.png" alt="Circle Pay Dog mascot" class="pulse-glow relative z-10 h-64 w-64 rounded-full object-cover ring-4 ring-arc-cream/20 sm:h-80 sm:w-80" />
+            <div class="absolute -bottom-3 rounded-full bg-arc-blue px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-widest shadow-glow">Moonbound Pup</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative z-10 overflow-hidden border-y border-arc-glow/20 bg-arc-black/70">
+      <div class="marquee-track py-3 font-ticker text-sm text-arc-sand">
+        <span class="px-6">$SANDY</span><span class="px-6 text-arc-glow">WOOF</span><span class="px-6">CIRCLE PAY DOG</span><span class="px-6 text-arc-cream">ARC USDC</span><span class="px-6">PAYMENT POWER</span><span class="px-6 text-arc-sunset">MEME ENERGY</span><span class="px-6">UNSTOPPABLE DOG VIBES</span><span class="px-6">MOONBOUND</span>
+        <span class="px-6">$SANDY</span><span class="px-6 text-arc-glow">WOOF</span><span class="px-6">CIRCLE PAY DOG</span><span class="px-6 text-arc-cream">ARC USDC</span><span class="px-6">PAYMENT POWER</span><span class="px-6 text-arc-sunset">MEME ENERGY</span><span class="px-6">UNSTOPPABLE DOG VIBES</span><span class="px-6">MOONBOUND</span>
+      </div>
+    </div>
+
+    <section id="about" class="relative z-10 mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <article class="glass paws rounded-[2rem] p-8 sm:p-12">
+          <p class="text-xs font-bold uppercase tracking-[0.28em] text-arc-glow">The pack thesis</p>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl">A payment dog with highway eyes.</h2>
+          <p class="mt-6 text-lg leading-relaxed text-arc-cream/85">
+            Circle Pay Dog brings payment power, meme energy, and unstoppable dog vibes together for a moonbound crypto adventure.
+          </p>
+          <p class="mt-4 leading-relaxed text-arc-cream/70">
+            $SANDY rides shotgun on Arc, where USDC is the gas, the quote, and the treat bowl. No extra chain-gas circus. Just a good boy, a desert sunset, and a contract ready to copy.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+              <p class="text-[11px] uppercase tracking-widest text-arc-cream/50">Power</p>
+              <p class="mt-1 font-display text-xl">Arc USDC rails</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+              <p class="text-[11px] uppercase tracking-widest text-arc-cream/50">Energy</p>
+              <p class="mt-1 font-display text-xl">Meme-maxed</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+              <p class="text-[11px] uppercase tracking-widest text-arc-cream/50">Vibes</p>
+              <p class="mt-1 font-display text-xl">Unstoppable</p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="glass overflow-hidden rounded-[2rem]">
+          <img src="banner.jpg" alt="SANDY in the back seat, sunset highway ahead" class="h-56 w-full object-cover sm:h-64" />
+          <div class="p-8">
+            <p class="font-ticker text-arc-sand">CA READY</p>
+            <div class="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-arc-glow/20 bg-black/40 px-4 py-4">
+              <div class="min-w-0">
+                <p class="text-[11px] uppercase tracking-widest text-arc-cream/50">Contract</p>
+                <p class="truncate font-mono text-lg" data-ca-label>TBA</p>
+              </div>
+              <button type="button" data-copy-ca class="shrink-0 rounded-full bg-arc-blue px-4 py-2 text-xs font-extrabold uppercase tracking-widest hover:bg-arc-glow hover:text-arc-black transition">Copy</button>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <a href="https://gmgn.ai/arc/token/TBA" target="_blank" rel="noopener noreferrer" class="rounded-2xl bg-arc-sand py-3 text-center font-extrabold uppercase tracking-widest text-arc-black">Buy Now</a>
+              <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-arc-glow/30 py-3 text-center font-extrabold uppercase tracking-widest">Chart</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="howtobuy" class="relative z-10 mx-auto max-w-7xl px-5 pb-24 lg:px-8">
+      <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.28em] text-arc-sand">Fetch protocol</p>
+          <h2 class="font-display text-4xl sm:text-5xl">How to Buy $SANDY</h2>
+          <p class="mt-2 max-w-2xl text-arc-cream/70">Four steps. Arc USDC only. Same token that pays gas also buys the dog.</p>
+        </div>
+        <a href="https://gmgn.ai/arc/token/TBA" target="_blank" rel="noopener noreferrer" class="self-start rounded-full bg-arc-sand px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-arc-black">Start at GMGN</a>
+      </div>
+
+      <div class="relative mb-8 hidden h-2 overflow-hidden rounded-full road-line lg:block"></div>
+
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <article class="glass rounded-[1.75rem] p-6">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-arc-blue/20 text-arc-glow">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+            </span>
+            <span class="font-ticker text-arc-sand">01</span>
+          </div>
+          <h3 class="font-display text-2xl">Clip the collar</h3>
+          <p class="mt-3 text-sm leading-relaxed text-arc-cream/70">Open an Arc-ready wallet like MetaMask or Rabby and add Arc Network. On Arc, USDC is native gas — keep a little extra for the ride.</p>
+        </article>
+
+        <article class="glass rounded-[1.75rem] p-6">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-arc-sand/15 text-arc-sand">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10.5h4.2a2.2 2.2 0 1 1 0 4.4H9"/></svg>
+            </span>
+            <span class="font-ticker text-arc-sand">02</span>
+          </div>
+          <h3 class="font-display text-2xl">Fill the bowl</h3>
+          <p class="mt-3 text-sm leading-relaxed text-arc-cream/70">Bridge native USDC onto Arc with Circle CCTP or Arc Portal. Only Arc-held USDC pays fees and buys $SANDY — other-chain USDC stays on the porch.</p>
+        </article>
+
+        <article class="glass rounded-[1.75rem] p-6">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-arc-sunset/15 text-arc-sunset">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/></svg>
+            </span>
+            <span class="font-ticker text-arc-sand">03</span>
+          </div>
+          <h3 class="font-display text-2xl">Sniff the CA</h3>
+          <p class="mt-3 text-sm leading-relaxed text-arc-cream/70">Copy the $SANDY contract from this page, then hit <b>Buy Now</b> on GMGN. Paste the CA and confirm you are swapping on Arc.</p>
+        </article>
+
+        <article class="glass rounded-[1.75rem] p-6">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-arc-glow/15 text-arc-glow">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 16c4-9 12-9 16 0"/><path d="M12 4v4M8 20h8"/><circle cx="12" cy="11" r="2"/></svg>
+            </span>
+            <span class="font-ticker text-arc-sand">04</span>
+          </div>
+          <h3 class="font-display text-2xl">Chase the moon</h3>
+          <p class="mt-3 text-sm leading-relaxed text-arc-cream/70">Swap Arc USDC for $SANDY, leave a biscuit of USDC for gas, confirm the tx, then watch the Dexscreener chart like a good boy at the window.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="chart" class="relative z-10 mx-auto max-w-7xl px-5 pb-28 lg:px-8">
+      <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.28em] text-arc-glow">Highway telemetry</p>
+          <h2 class="font-display text-4xl sm:text-5xl">Live $SANDY chart</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" data-copy-ca class="rounded-full border border-white/20 px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest hover:border-arc-sand hover:text-arc-sand transition">Copy CA</button>
+          <a href="https://dexscreener.com/arc/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full border border-arc-blue bg-arc-blue/20 px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest hover:bg-arc-blue transition">Open Dexscreener</a>
+          <a href="https://gmgn.ai/arc/token/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-arc-sand px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-arc-black">Buy Now</a>
+        </div>
+      </div>
+      <div class="glass overflow-hidden rounded-[2rem] p-2 sm:p-3">
+        <div id="dexscreener-embed">
+          <iframe
+            title="Dexscreener $SANDY chart"
+            src="https://dexscreener.com/arc/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
+            allow="clipboard-write"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10 bg-black/50">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-10 sm:flex-row lg:px-8">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="" class="h-12 w-12 rounded-full object-cover ring-2 ring-arc-sand/60" />
+        <div>
+          <p class="font-display text-lg">Circle Pay Dog</p>
+          <p class="text-xs uppercase tracking-[0.2em] text-arc-cream/50">$SANDY on Arc</p>
+        </div>
+      </div>
+      <p class="max-w-md text-center text-sm text-arc-cream/55 sm:text-left">Payment power, meme energy, unstoppable dog vibes. Moonbound and slightly sandy.</p>
+      <div class="flex items-center gap-3">
+        <a href="https://x.com/CirclePayDog" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded-full bg-black ring-1 ring-white/20" aria-label="X">
+          <img src="x.png" alt="X" class="h-5 w-5" />
+        </a>
+        <a href="https://gmgn.ai/arc/token/TBA" target="_blank" rel="noopener noreferrer" class="rounded-full bg-arc-sand px-4 py-2 text-xs font-extrabold uppercase tracking-widest text-arc-black">Buy Now</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast glass pointer-events-none fixed bottom-6 left-1/2 z-[60] -translate-x-1/2 rounded-full px-5 py-3 text-sm font-semibold shadow-glow">
+    CA copied. Good boy.
+  </div>
+
+  <script>
+    const CA = "TBA";
+    const toast = document.getElementById("toast");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    async function copyCA() {
+      try {
+        await navigator.clipboard.writeText(CA);
+      } catch {
+        const field = document.createElement("textarea");
+        field.value = CA;
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand("copy");
+        field.remove();
+      }
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    document.querySelectorAll("[data-copy-ca]").forEach((btn) => {
+      btn.addEventListener("click", copyCA);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+  </script>
+</body>
+</html>
